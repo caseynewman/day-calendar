@@ -1,26 +1,26 @@
-//displaying today's date
-
-//dayjs - probs use Now and format, read the docs
-//get today's date in the right format and save it to a variable
-
 let currentDay = document.querySelector('#current-day') 
 
 
-const createDate = () => {
+
+
+const setCurrentDate = () => {
     const p = document.createElement('p')
     p.innerText = dayjs().format('dddd, MMMM D, YYYY')
     currentDay.appendChild(p)
 }
 
 
-createDate()
+setCurrentDate()
 
 
-//console.log that variable
-//append to page
-    //create an element
-    //set innerText to that variable I just made
-    //append that to the currentDay div
+
+const setCurrentTime = () => {
+    dayjs().hour('HH:mm')
+}
+
+console.log (setCurrentTime)
+
+
 
 
 //use dayjs to get the current hour and store it in a variable
