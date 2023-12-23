@@ -8,7 +8,7 @@ let currentDay = document.querySelector('#current-day')
 
 const createDate = () => {
     const p = document.createElement('p')
-    p.innerText = dayjs()
+    p.innerText = dayjs().format('dddd, MMMM D, YYYY')
     currentDay.appendChild(p)
 }
 
