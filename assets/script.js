@@ -3,9 +3,17 @@
 //dayjs - probs use Now and format, read the docs
 //get today's date in the right format and save it to a variable
 
-let now = dayjs()
+let currentDay = document.querySelector('#current-day') 
 
-console.log (now)
+
+const createDate = () => {
+    const p = document.createElement('p')
+    p.innerText = dayjs()
+    currentDay.appendChild(p)
+}
+
+
+createDate()
 
 
 //console.log that variable
