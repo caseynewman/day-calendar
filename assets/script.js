@@ -2,6 +2,12 @@
 
 //dayjs - probs use Now and format, read the docs
 //get today's date in the right format and save it to a variable
+
+let now = dayjs()
+
+console.log (now)
+
+
 //console.log that variable
 //append to page
     //create an element
