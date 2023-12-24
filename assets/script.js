@@ -9,14 +9,11 @@ const setCurrentDate = () => {
     currentDay.appendChild(p)
 }
 
-
 setCurrentDate()
 
 
 
-const setCurrentTime = () => {
-    dayjs().hour('HH:mm')
-}
+const setCurrentTime = dayjs().format('HH:mm')
 
 console.log (setCurrentTime)
 
@@ -27,6 +24,7 @@ console.log (setCurrentTime)
 //could use setInterval to make past/present/future dynamic - though not required
 const divs = document.querySelectorAll('.py-3'); //this is an array
 console.log(divs)
+
 //for loop
     //get innerText from each div
     //compare that to the current hour (if statement)
