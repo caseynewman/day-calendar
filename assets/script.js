@@ -1,29 +1,29 @@
-let currentDay = document.querySelector('#current-day') 
+let currentDay = document.querySelector('#current-day');
+const divs = document.querySelectorAll('.py-3');
 
 
 
 
 const setCurrentDate = () => {
-    const p = document.createElement('p')
-    p.innerText = dayjs().format('dddd, MMMM D, YYYY')
-    currentDay.appendChild(p)
+    const p = document.createElement('p');
+    p.innerText = dayjs().format('dddd, MMMM D, YYYY');
+    currentDay.appendChild(p);
 }
 
 setCurrentDate()
 
 
 
-const setCurrentTime = dayjs().format('HH:mm')
+const setCurrentTime = dayjs().format('HH:mm');
 
-console.log (setCurrentTime)
 
 
 
 
 //use dayjs to get the current hour and store it in a variable
 //could use setInterval to make past/present/future dynamic - though not required
-const divs = document.querySelectorAll('.py-3'); //this is an array
-console.log(divs)
+// const divs = document.querySelectorAll('.py-3'); //this is an array
+
 
 //for loop
     //get innerText from each div
