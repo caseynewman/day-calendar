@@ -20,21 +20,23 @@ const setCurrentTime = dayjs().format('HH:mm');
 
 const changeBackground = () => {
     let currentHour = divs.innerText;
+    let currentDiv = [];
     for (let i = 0; i < divs.length; i++) {
-        if (currentHour < setCurrentTime) {
-            divs.setAttribute('class', 'past');
-        } else if (currentHour = setCurrentTime) {
-            divs.setAttribute('class', 'present');
-        } else if (currentHour > setCurrentTime) {
-            divs.setAttribute('class', 'past');
-        }
+        currentDiv.push(divs[i].innerText)
     }
+    if (currentHour < setCurrentTime) {
+        currentDiv.setAttribute('class', 'past');
+    } else if (currentHour = setCurrentTime) {
+        currentDiv.setAttribute('class', 'present');
+    } else if (currentHour > setCurrentTime) {
+        currentDiv.setAttribute('class', 'past');
+        }
 }
 
 changeBackground()
 
 
-console.log (divs.innerText)
+console.log (currentDiv)
 
 
 //use dayjs to get the current hour and store it in a variable
