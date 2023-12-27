@@ -1,7 +1,7 @@
 let currentDay = document.querySelector('#current-day');
 const divs = document.querySelectorAll('.py-3');
 const textAreas = document.querySelectorAll('.description');
-
+const setCurrentTime = dayjs().format('HH:mm');
 
 
 
@@ -13,10 +13,6 @@ const setCurrentDate = () => {
 }
 
 setCurrentDate()
-
-
-const setCurrentTime = dayjs().format('HH:mm');
-
 
 const setBackgrounds = () => {
     for (let i = 0; i < divs.length; i++) {
@@ -31,8 +27,9 @@ const changeBackgroundColor = (hourDiv, textDiv) => {
     let currentHour = parseInt(setCurrentTime);
     if (divHour < currentHour) {
         textDiv.classList.add("past");
-    } else if (divHour = currentHour) {
+    } else if (divHour === currentHour) {
         textDiv.classList.add("present");
+        console.log (currentHour, divHour)
     } else if (divHour > currentHour) {
         textDiv.classList.add("future");
     }
