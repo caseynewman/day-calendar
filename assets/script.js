@@ -1,5 +1,7 @@
 let currentDay = document.querySelector('#current-day');
 const divs = document.querySelectorAll('.py-3');
+const textAreas = document.querySelectorAll('.description');
+
 
 
 
@@ -16,31 +18,32 @@ setCurrentDate()
 const setCurrentTime = dayjs().format('HH:mm');
 
 
-
-
-const changeBackground = () => {
-    let currentHour = divs.innerText;
-    let currentDiv = [];
+const setBackgrounds = () => {
     for (let i = 0; i < divs.length; i++) {
-        currentDiv.push(divs[i].innerText)
+        let hourDiv = divs[i];
+        let textDiv = textAreas[i];
+        changeBackgroundColor(hourDiv, textDiv);
     }
-    if (currentHour < setCurrentTime) {
-        currentDiv.setAttribute('class', 'past');
-    } else if (currentHour = setCurrentTime) {
-        currentDiv.setAttribute('class', 'present');
-    } else if (currentHour > setCurrentTime) {
-        currentDiv.setAttribute('class', 'past');
-        }
 }
 
-changeBackground()
+const changeBackgroundColor = (hourDiv, textDiv) => {
+    let divHour = parseInt(hourDiv.innerText);
+    let currentHour = parseInt(setCurrentTime);
+    if (divHour < currentHour) {
+        textDiv.classList.add("past");
+    } else if (divHour = currentHour) {
+        textDiv.classList.add("present");
+    } else if (divHour > currentHour) {
+        textDiv.classList.add("future");
+    }
+}
 
-
-console.log (currentDiv)
+setBackgrounds()
 
 
 //use dayjs to get the current hour and store it in a variable
 //could use setInterval to make past/present/future dynamic - though not required
+
 // const divs = document.querySelectorAll('.py-3'); //this is an array
 
 
