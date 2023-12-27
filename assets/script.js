@@ -38,20 +38,9 @@ const changeBackgroundColor = (hourDiv, textDiv) => {
 setBackgrounds()
 
 
-//use dayjs to get the current hour and store it in a variable
-//could use setInterval to make past/present/future dynamic - though not required
-
-// const divs = document.querySelectorAll('.py-3'); //this is an array
-
-
-//for loop
-    //get innerText from each div
-    //compare that to the current hour (if statement)
-        //if that innerText is less than current hour
-        //.setAttribute('class', 'row time-block past')
-        //if innerText is equal to the current hour
-        //.setAttribue('class', 'row time-block past')
-        //...
+const storeToDos = () => {
+    textAreas.innerText = '';
+}
 
 
 //save things in localStorage
