@@ -2,6 +2,8 @@ let currentDay = document.querySelector('#current-day');
 const divs = document.querySelectorAll('.py-3');
 const textAreas = document.querySelectorAll('.description');
 const setCurrentTime = dayjs().format('HH:mm');
+const saveButton = document.querySelectorAll('.saveBtn');
+let toDos = JSON.parse(localStorage.getItem('toDos'));
 
 
 
@@ -29,7 +31,6 @@ const changeBackgroundColor = (hourDiv, textDiv) => {
         textDiv.classList.add("past");
     } else if (divHour === currentHour) {
         textDiv.classList.add("present");
-        console.log (currentHour, divHour)
     } else if (divHour > currentHour) {
         textDiv.classList.add("future");
     }
@@ -38,9 +39,22 @@ const changeBackgroundColor = (hourDiv, textDiv) => {
 setBackgrounds()
 
 
+
+saveButton.addEventListener('click', () => {
+    localStorage.setItem("toDoItems", JSON.stringify(toDoItems));
+    storeToDos();
+})
+
+
 const storeToDos = () => {
-    textAreas.innerText = '';
+    const toDoItems = document.createElement('p');
+    toDoItems.innerText = '';
+    textAreas.appendChild(toDoItems);
 }
+
+
+
+
 
 
 //save things in localStorage
