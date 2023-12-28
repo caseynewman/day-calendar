@@ -3,7 +3,6 @@ const divs = document.querySelectorAll('.py-3');
 const textAreas = document.querySelectorAll('.description');
 const setCurrentTime = dayjs().format('HH:mm');
 const saveButton = document.querySelectorAll('.saveBtn');
-let toDos = JSON.parse(localStorage.getItem('toDos'));
 
 
 
@@ -40,17 +39,38 @@ setBackgrounds()
 
 
 
-saveButton.addEventListener('click', () => {
-    localStorage.setItem("toDoItems", JSON.stringify(toDoItems));
-    storeToDos();
+saveButton.forEach((saveButton) => {
+    saveButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const toDos = {
+            input: textAreas.value,
+        };
+        
+        localStorage.setItem('userToDos', JSON.stringify(toDos));
+        displayToDos();
+    })
 })
 
 
-const storeToDos = () => {
-    const toDoItems = document.createElement('p');
-    toDoItems.innerText = '';
-    textAreas.appendChild(toDoItems);
+const displayToDos = () => {
+    const textAreas = JSON.parse(localStorage.getItem('userToDos'));
+    if (textAreas !== null) {
+        textAreas.textContent = toDos
+    }
 }
+
+
+
+
+
+// const storeToDos = () => {
+//     const toDoItems = document.createElement('p');
+//     toDoItems.innerText = '';
+//     textAreas.appendChild(toDoItems);
+// }
+
+
 
 
 
