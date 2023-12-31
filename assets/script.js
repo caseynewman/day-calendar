@@ -2,7 +2,9 @@ let currentDay = document.querySelector('#current-day');
 const divs = document.querySelectorAll('.py-3');
 const textAreas = document.querySelectorAll('.description');
 const setCurrentTime = dayjs().format('HH:mm');
-const saveButton = document.querySelectorAll('.saveBtn');
+const saveButtonArr = document.querySelectorAll('button');
+let userToDos = JSON.parse(localStorage.getItem('userToDos'));
+
 
 
 
@@ -39,28 +41,44 @@ setBackgrounds()
 
 
 
-saveButton.forEach((saveButton) => {
-    saveButton.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        const toDos = {
-            input: textAreas.value,
-        };
-        
-        localStorage.setItem('userToDos', JSON.stringify(toDos));
-        displayToDos();
-    })
-})
 
 
-const displayToDos = () => {
-    const textAreas = JSON.parse(localStorage.getItem('userToDos'));
-    if (textAreas !== null) {
-        textAreas.textContent = toDos
+
+
+for (let i = 0; i < saveButtonArr.length; i++){
+    const clickHandler = () => {
+        const text = textAreas[i].value;
+        localStorage.setItem(i, text)
+        console.log(text)
     }
+
+    saveButtonArr[i].addEventListener('click', clickHandler)
 }
 
 
+
+
+
+// const toDos = {
+//     input: userToDos.value
+// };
+
+// saveButtonArr.forEach((saveButtonArr) => {
+//     saveButtonArr.addEventListener('click', function(event) {
+//         event.preventDefault();      
+//         localStorage.setItem('userToDos', JSON.stringify(toDos));
+//         displayToDos();
+//     })
+// })
+
+// const displayToDos = () => {
+//     if (userToDos !== null) {
+//         userToDos.innerText = toDos.input;
+//     }
+// }
+
+
+// userToDos.appendChild(toDos)
 
 
 
