@@ -3,7 +3,7 @@ const divs = document.querySelectorAll('.py-3');
 const textAreas = document.querySelectorAll('.description');
 const setCurrentTime = dayjs().format('HH:mm');
 const saveButtonArr = document.querySelectorAll('button');
-let userToDos = JSON.parse(localStorage.getItem('userToDos'));
+// let userToDos = JSON.parse(localStorage.getItem('userToDos'));
 
 
 
@@ -45,14 +45,19 @@ setBackgrounds()
 
 
 
-for (let i = 0; i < saveButtonArr.length; i++){
-    const clickHandler = () => {
+for (let i = 0; i < saveButtonArr.length; i++) {
+    const saveText = () => {
         const text = textAreas[i].value;
         localStorage.setItem(i, text)
         console.log(text)
     }
 
-    saveButtonArr[i].addEventListener('click', clickHandler)
+    saveButtonArr[i].addEventListener('click', saveText)
+}
+
+for (let i = 0; i < textAreas.length; i++) {
+    localStorage.getItem(i, text)
+
 }
 
 
