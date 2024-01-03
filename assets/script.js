@@ -35,14 +35,17 @@ const changeBackgroundColor = (hourDiv, textDiv) => {
 
 setBackgrounds()
 
-for (let i = 0; i < saveButtonArr.length; i++) {
-    const saveText = () => {
-        const text = textAreas[i].value;
-        localStorage.setItem(i, text);
+const displayToDos = () => {
+    for (let i = 0; i < saveButtonArr.length; i++) {
+        const saveText = () => {
+            const text = textAreas[i].value;
+            localStorage.setItem(i, text);
+        }
+        saveButtonArr[i].addEventListener('click', saveText)
     }
-    saveButtonArr[i].addEventListener('click', saveText)
+    for (let i = 0; i < textAreas.length; i++) {
+        textAreas[i].value = localStorage.getItem(i);
+    }
 }
 
-for (let i = 0; i < textAreas.length; i++) {
-    textAreas[i].value = localStorage.getItem(i);
-}
+displayToDos()
