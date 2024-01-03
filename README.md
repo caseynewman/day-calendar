@@ -2,24 +2,15 @@
 
 ## Description
 
-This calendar was created so that the user can have a simple work day scheduler where they can add and save daily to-do's. The scheduler is responsive with the current date and time, so the user can clearly see past events, what's happening currently, and future events. In building this project, I learned how to implement third party APIs like dayjs. I used loops to change the background color for each time block dynamically, as well as to save and retrieve each event in local storage.
+This calendar was created so that the user can have a simple work day scheduler where they can add and save daily to-do's. The scheduler is responsive with the current date and time, and it displays color-coded time blocks so the user can clearly see past events, what's happening currently, and future events. In building this project, I learned how to implement third party APIs like dayjs. I used loops to change the background color for each time block dynamically, as well as to save and retrieve each event in local storage.
+
+![Work Day Scheduler]()
+[Deployed Website](https://caseynewman.github.io/day-calendar/)
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+Click into a text area to add an event or to-do for that time slot. Click the save button to store your task. When you refresh your browser, your event will still be saved in the appropriate time block. When you'd like to clear a task, simply delete your text and hit save.
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-## Features
-
-If your project has a lot of features, list them here.
+Our instructor, CJ Jordan, held office hours that clarified questions I had about local storage.
