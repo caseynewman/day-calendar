@@ -4,7 +4,7 @@
 
 This calendar was created so that the user can have a simple work day scheduler where they can add and save daily to-do's. The scheduler is responsive with the current date and time, and it displays color-coded time blocks so the user can clearly see past events, what's happening currently, and future events. In building this project, I learned how to implement third party APIs like Day.js. I used loops to change the background color for each time block dynamically, as well as to save and retrieve each event in local storage.
 
-![Work Day Scheduler]()
+![Work Day Scheduler](/assets/images/day-calendar-screenshot.png)
 [Deployed Website](https://caseynewman.github.io/day-calendar/)
 
 ## Usage
